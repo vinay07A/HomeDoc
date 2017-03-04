@@ -1,8 +1,27 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Health</string>
     <string name="hello_world">LOGIN</string>
     <string name="username">username</string>
     <string name="password">Password</string>
     <string name="Login">LOGIN</string>
     <string name="newUser">Not a Member yet? Sign Up here.</string>
+    <string name="title_activity_home__acitivity">Home_Acitivity</string>
+    <string name="option1">option1</string>
+    <string name="option2">option2</string>
+    <string name="option3">option3</string>
+    <string name="option4">option4</string>
+    <string name="option5">option5</string>
+    <string name="submenu"></string>
+    <string name="option6">option6</string>
+    <string name="option7">option7</string>
+    <string name="hello">HELLO</string>
+    <string name="navvinay">Vinay</string>
+    <string name="mailvinay">kembhavi.vinay@gmail.com</string>
+
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
