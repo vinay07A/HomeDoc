@@ -40,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
+        onRestart();
         if (username.getText().toString().equals("admin") &&
                 password.getText().toString().equals("admin")) {
+
+
             Toast.makeText(getApplicationContext(), "Welcome",
                     Toast.LENGTH_SHORT).show();
             Intent i = new Intent(MainActivity.this,Home_Acitivity.class);
@@ -57,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
 
             }
+        }
+        @Override
+        protected void onRestart(){
+            super.onRestart();
+            Intent k = new Intent(MainActivity.this,MainActivity.class);
+            startActivity(k);
+            finish();
+
         }
     }
 
