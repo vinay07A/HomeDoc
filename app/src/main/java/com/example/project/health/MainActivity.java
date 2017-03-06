@@ -75,6 +75,34 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void setListener(){
+        //forgot_password.setOnClickListener(this);
+        // Set check listener over checkbox for showing and hiding password
+
+        show_hide_password.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    show_hide_password.setText(R.string.hide_pwd);
+                    password.setInputType(InputType.TYPE_CLASS_TEXT);
+                    password.setTransformationMethod(HideReturnsTransformationMethod
+                            .getInstance());// show password
+                } else {
+                    show_hide_password.setText(R.string.show_pwd);// change
+                    // checkbox
+                    // text
+
+                    password.setInputType(InputType.TYPE_CLASS_TEXT
+                            | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    password.setTransformationMethod(PasswordTransformationMethod
+                            .getInstance());// hide password
+                }
+
+            }
+        });
+    }
+
         public void login (View view){
             onRestart();
             if (username.getText().toString().equals("admin") &&
@@ -107,31 +135,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setListener(){
-        //forgot_password.setOnClickListener(this);
-        // Set check listener over checkbox for showing and hiding password
 
-        show_hide_password.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if(isChecked)
-                    {
-                        show_hide_password.setText(R.string.hide_pwd);
-                        password.setInputType(InputType.TYPE_CLASS_TEXT);
-                        password.setTransformationMethod(HideReturnsTransformationMethod
-                                .getInstance());// show password
-                    } else {
-                        show_hide_password.setText(R.string.show_pwd);// change
-                        // checkbox
-                        // text
-
-                        password.setInputType(InputType.TYPE_CLASS_TEXT
-                                | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                        password.setTransformationMethod(PasswordTransformationMethod
-                                .getInstance());// hide password
-                    }
-
-            }
-        });
-    }
 }
