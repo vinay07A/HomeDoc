@@ -119,12 +119,13 @@
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
         android:text="@string/newUser"
-        android:textSize="20dp"
-        android:textColor="@color/white"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:textColor="@color/white"
+        android:textSize="15dp" />
 
     <CheckBox
         android:id="@+id/show_hide_password"

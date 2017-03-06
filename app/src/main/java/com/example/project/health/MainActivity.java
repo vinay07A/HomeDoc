@@ -23,6 +23,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
+import org.w3c.dom.Text;
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private static Button login = null;
     private static TextView text = null;
     private static CheckBox show_hide_password;
+    private static TextView forgot_password=null;
     private static View view;
 
     public  MainActivity(){
@@ -66,13 +68,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         login = (Button) findViewById(R.id.button);
         text = (TextView) findViewById(R.id.signup);
         show_hide_password = (CheckBox) findViewById(R.id.show_hide_password);
-        //forgot_password = (TextView) findViewById(R.id.forgot_password);
+        forgot_password = (TextView) findViewById(R.id.forgot_password);
 
     }
 
     private void setListeners(){
             login.setOnClickListener(this);
             text.setOnClickListener(this);
+            forgot_password.setOnClickListener(this);
 
         //show hide password
 
@@ -98,6 +101,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
             case R.id.button:
                 checkvalidation();
+                break;
+
+            case R.id.signup:
+                Intent j = new Intent(MainActivity.this, Signup_activity.class);
+                startActivity(j);
+                break;
+
+            case R.id.forgot_password:
+                Intent k = new Intent(MainActivity.this, Forgotpassword.class);
+                startActivity(k);
                 break;
 
 
