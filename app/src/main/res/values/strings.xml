@@ -3,7 +3,7 @@
     <string name="hello_world">LOGIN</string>
     <string name="mail">Email_id</string>
     <string name="password">Password</string>
-    <string name="Login">LOGIN</string>
+    <string name="login">LOGIN</string>
     <string name="show_pwd">Show Password</string>
     <string name="forgot">Forgot password?</string>
     <string name="newUser">Not a Member yet? Sign Up here.</string>
@@ -16,12 +16,16 @@
     <string name="option5">option5</string>
     <string name="submenu"></string>
     <string name="option6">option6</string>
+    <string name="registered_emailid">Please enter your Registered Email Id below:</string>
+    <string name="closebutton">Close Button for Activity</string>
+
     <string name="option7">option7</string>
     <string name="hello">HELLO</string>
     <string name="navvinay">Vinay</string>
     <string name="mailvinay">kembhavi.vinay@gmail.com</string>
     <string name="vinay">vinay</string>
-
+    <string name="submit">SUBMIT</string>
+    <string name="back">BACK</string>
 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
