@@ -23,6 +23,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
+import org.w3c.dom.Text;
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private static Button login = null;
     private static TextView text = null;
     private static CheckBox show_hide_password;
+    private static TextView forgot_password=null;
     private static View view;
 
     public  MainActivity(){
@@ -66,13 +68,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         login = (Button) findViewById(R.id.button);
         text = (TextView) findViewById(R.id.signup);
         show_hide_password = (CheckBox) findViewById(R.id.show_hide_password);
-        //forgot_password = (TextView) findViewById(R.id.forgot_password);
+        forgot_password = (TextView) findViewById(R.id.forgot_password);
 
     }
 
     private void setListeners(){
-            login.setOnClickListener(this);
-            text.setOnClickListener(this);
+        login.setOnClickListener(this);
+        text.setOnClickListener(this);
+        forgot_password.setOnClickListener(this);
 
         //show hide password
 
@@ -92,47 +95,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     }
 
-
-    private void setListener(){
-        //forgot_password.setOnClickListener(this);
-        // Set check listener over checkbox for showing and hiding password
-
-        show_hide_password.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked)
-                {
-                    show_hide_password.setText(R.string.hide_pwd);
-                    password.setInputType(InputType.TYPE_CLASS_TEXT);
-                    password.setTransformationMethod(HideReturnsTransformationMethod
-                            .getInstance());// show password
-                } else {
-                    show_hide_password.setText(R.string.show_pwd);// change
-                    // checkbox
-                    // text
-
-                    password.setInputType(InputType.TYPE_CLASS_TEXT
-                            | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    password.setTransformationMethod(PasswordTransformationMethod
-                            .getInstance());// hide password
-                }
-
-            }
-        });
-    }
-
-        public void login (View view){
-            onRestart();
-            if (username.getText().toString().equals("admin") &&
-                    password.getText().toString().equals("admin")) {
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){
 
-
             case R.id.button:
                 checkvalidation();
+                break;
+
+            case R.id.signup:
+                Intent j = new Intent(MainActivity.this, Signup_activity.class);
+                startActivity(j);
+                break;
+
+            case R.id.forgot_password:
+                Intent k = new Intent(MainActivity.this, );
+                startActivity(k);
                 break;
 
 
@@ -163,15 +141,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     Toast.LENGTH_SHORT).show();
             onRestart();
 
-            }
+        }
 
         else {
             Toast.makeText(getApplicationContext(), "Welcome",
                     Toast.LENGTH_SHORT).show();
             Intent i = new Intent(MainActivity.this, Home_Acitivity.class);
             startActivity(i);
-            }
         }
+    }
 
     @Override
     protected void onRestart() {
@@ -181,10 +159,4 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         finish();
 
     }
-<<<<<<< HEAD
-
-
 }
-=======
-}
->>>>>>> homed/master
