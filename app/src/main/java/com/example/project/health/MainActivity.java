@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     private void setListeners(){
-        login.setOnClickListener(this);
-        text.setOnClickListener(this);
-        forgot_password.setOnClickListener(this);
+            login.setOnClickListener(this);
+            text.setOnClickListener(this);
+            forgot_password.setOnClickListener(this);
 
         //show hide password
 
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 break;
 
             case R.id.forgot_password:
-                Intent k = new Intent(MainActivity.this, );
+                Intent k = new Intent(MainActivity.this, Forgotpassword.class);
                 startActivity(k);
                 break;
 
@@ -141,15 +141,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     Toast.LENGTH_SHORT).show();
             onRestart();
 
-        }
+            }
 
         else {
             Toast.makeText(getApplicationContext(), "Welcome",
                     Toast.LENGTH_SHORT).show();
             Intent i = new Intent(MainActivity.this, Home_Acitivity.class);
             startActivity(i);
+            }
         }
-    }
 
     @Override
     protected void onRestart() {
