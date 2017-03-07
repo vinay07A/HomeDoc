@@ -29,7 +29,8 @@
             android:name=".Home_Acitivity"
             android:label="@string/title_activity_home__acitivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Forgotpassword"></activity>
+        <activity android:name=".Forgotpassword" />
+        <activity android:name=".bmi_activity"></activity>
     </application>
 
 </manifest>

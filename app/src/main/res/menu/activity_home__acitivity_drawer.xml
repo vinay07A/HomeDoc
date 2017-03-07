@@ -3,38 +3,38 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/option1"
+            android:id="@+id/timeline_id"
             android:icon="@drawable/ic_menu_send"
-            android:title="@string/option1" />
+            android:title="@string/timeline" />
         <item
-            android:id="@+id/option2"
+            android:id="@+id/health_status_id"
             android:icon="@drawable/ic_menu_send"
-            android:title="@string/option2" />
+            android:title="@string/health_status" />
         <item
-            android:id="@+id/option3"
+            android:id="@+id/profile_id"
             android:icon="@drawable/ic_menu_send"
-            android:title="@string/option3" />
+            android:title="@string/profile" />
         <item
-            android:id="@+id/option4"
+            android:id="@+id/calculate_bmi_id"
             android:icon="@drawable/ic_menu_send"
-            android:title="@string/option4" />
+            android:title="@string/calculate_bmi" />
 
         <item
-            android:id="@+id/option5"
+            android:id="@+id/blogs_id"
             android:icon="@drawable/ic_menu_send"
-            android:title="@string/option5" />
+            android:title="@string/blogs"  />
     </group>
 
     <item android:title="@string/submenu">
         <menu>
             <item
-                android:id="@+id/option6"
+                android:id="@+id/settings_id"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/option6" />
+                android:title="@string/settings" />
             <item
-                android:id="@+id/option7"
+                android:id="@+id/logout_id"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/option7" />
+                android:title="@string/logout" />
         </menu>
     </item>
 

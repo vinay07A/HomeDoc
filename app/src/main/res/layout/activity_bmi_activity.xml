@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.project.health.MainActivity"
+        android:background="@color/background_color">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="205dp"
+        android:layout_height="31dp"
+        android:text="@string/bmi_text"
+        android:textColor="#000000"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:layout_editor_absoluteY="82dp"
+        tools:layout_editor_absoluteX="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/weight_id"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="162dp"
+        android:hint="@string/enterWeight"
+        android:textColorHint="#ffffff"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/activity_horizontal_margin"/>
+
+    <EditText
+        android:id="@+id/height_id"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="251dp"
+        android:hint="@string/enterHeight"
+        android:textColorHint="#ffffff"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/weight_id"
+        android:layout_alignLeft="@+id/weight_id"
+        android:layout_alignStart="@+id/weight_id"
+        android:padding="@dimen/activity_horizontal_margin"/>
+
+    <Button
+        android:id="@+id/BMICalculate_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="calculateBMI"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="@string/calculate_bmi" />
+
+    <ProgressBar
+        android:id="@+id/BMIProgressBar_id"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/height_id"
+        android:layout_alignLeft="@+id/height_id"
+        android:layout_alignRight="@+id/height_id"
+        android:layout_alignStart="@+id/height_id"
+        android:layout_below="@+id/BMICalculate_id"
+        android:layout_marginTop="47dp"
+        android:padding="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/BMIResult_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BMIProgressBar_id"
+        android:layout_alignLeft="@+id/BMIProgressBar_id"
+        android:layout_alignStart="@+id/BMIProgressBar_id"
+        android:layout_alignRight="@+id/BMIProgressBar_id"
+        android:layout_alignEnd="@+id/BMIProgressBar_id"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+</RelativeLayout>
