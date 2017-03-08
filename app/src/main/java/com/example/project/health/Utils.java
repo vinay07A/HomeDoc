@@ -12,7 +12,7 @@ public class Utils {
     public  static final  String fname = "\\b[A-Za-z]+\\b";
     public static final String lname = "\\b[A-Za-z]+\\b";
     public static final String number = "\\b[7-9][0-9]{9}\\b";
-    public static final String pwd = "\\b[A-Za-z]{6,}[0-9}{2,}\\b";
+    public static final String pwd = "\\b[A-Za-z0-9]{8,}\\b";
 
 
 }

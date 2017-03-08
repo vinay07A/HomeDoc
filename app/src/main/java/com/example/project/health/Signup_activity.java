@@ -250,31 +250,36 @@ public class Signup_activity extends AppCompatActivity implements OnClickListene
      }*/
     //String getpwd = password.getText().toString();
     private boolean validatepwd() {
-        String getpwd = password.getText().toString();
+        try {
+            String getpwd = password.getText().toString();
 
 
-        // Check patter for email id
-        Pattern p = Pattern.compile(Utils.pwd);
+            // Check patter for email id
+            Pattern p = Pattern.compile(Utils.pwd);
 
-        Matcher m = p.matcher(getpwd);
+            Matcher m = p.matcher(getpwd);
 
-        // Check for both field is empty or not
-        if (getpwd.equals("") || getpwd.length() == 0) {
-            inputlayout_pwd.setError(getString(R.string.err_msg_pwd));
-            requestFocus(password);
-            return false;
-        } else if (!m.find()) {
-            inputlayout_pwd.setError(getString(R.string.err_msg_pwd1));
-            requestFocus(password);
-            return false;
+            // Check for both field is empty or not
+            if (getpwd.equals("") || getpwd.length() == 0) {
+                inputlayout_pwd.setError(getString(R.string.err_msg_pwd));
+                requestFocus(password);
+                return false;
+            } else if (!m.find()) {
+                inputlayout_pwd.setError(getString(R.string.err_msg_pwd1));
+                requestFocus(password);
+                return false;
 
-        } else {
+            } else {
 
-            inputlayout_pwd.setErrorEnabled(false);
+                inputlayout_pwd.setErrorEnabled(false);
+            }
+
+            return true;
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(), e.toString(),
+                    Toast.LENGTH_SHORT).show();
         }
-
         return true;
-
     }
     private boolean validatecpwd() {
         String getcpwd = confirmpassword.getText().toString();
