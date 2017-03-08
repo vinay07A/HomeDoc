@@ -61,6 +61,7 @@ public class Forgotpassword extends AppCompatActivity implements OnClickListener
                         //Refresh login page
                     Intent l = new Intent(Forgotpassword.this, MainActivity.class);
                     startActivity(l);
+                    finish();
                             break;
 
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
@@ -23,19 +24,15 @@
             android:id="@+id/blogs_id"
             android:icon="@drawable/ic_menu_send"
             android:title="@string/blogs"  />
-    </group>
 
-    <item android:title="@string/submenu">
-        <menu>
-            <item
+        <item
                 android:id="@+id/settings_id"
                 android:icon="@drawable/ic_menu_send"
                 android:title="@string/settings" />
-            <item
+        <item
                 android:id="@+id/logout_id"
                 android:icon="@drawable/ic_menu_send"
                 android:title="@string/logout" />
-        </menu>
-    </item>
 
+    </group>
 </menu>
