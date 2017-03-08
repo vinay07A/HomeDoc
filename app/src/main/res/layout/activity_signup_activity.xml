@@ -8,14 +8,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.project.health.Signup_activity">
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello"
-        android:textColor="@color/black"
-        android:textSize="30dp"/>
-
+    tools:context="com.example.project.health.Signup_activity"
+    android:background="@color/light_blue">
 </RelativeLayout>

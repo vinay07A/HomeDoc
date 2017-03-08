@@ -1,5 +1,6 @@
 package com.example.project.health;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -80,20 +81,23 @@ public class Home_Acitivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.option1) {
-            // Handle the camera action
-        } else if (id == R.id.option2) {
+        switch(id) {
 
-        } else if (id == R.id.option3) {
+            case R.id.timeline_id : break;
 
-        } else if (id == R.id.option4) {
+            case R.id.profile_id : break;
 
-        } else if (id == R.id.option5) {
+            case R.id.health_status_id : break;
 
-        } else if (id == R.id.option6) {
+            case R.id.calculate_bmi_id : Intent intent = new Intent(this, bmi_activity.class);
+                                        startActivity(intent);
+                                        break ;
 
-        } else if (id == R.id.option7) {
+            case R.id.blogs_id : break;
 
+            case R.id.settings_id : break;
+
+            case R.id.logout_id : break;
         }
 
 

@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         String getEmailId = email.getText().toString();
         String getPassword = password.getText().toString();
 
-        // Check patter for email id
+        // Check pattern for email id
         Pattern p = Pattern.compile(Utils.regEx);
 
         Matcher m = p.matcher(getEmailId);

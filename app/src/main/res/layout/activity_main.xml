@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.project.health.MainActivity"
-    android:background="@color/deem">
+    android:background="@color/colorPrimary">
 
     <TextView
         android:id="@+id/textView1"
@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:text="@string/hello_world"
+        android:text="@string/login"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <!--<TextView
@@ -37,14 +37,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="84dp"
-        android:ems="10"
-        android:hint="@string/mail"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
         android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="@string/mail"
         android:inputType="textEmailAddress"
         android:padding="10dp"
-        android:drawableLeft="@drawable/email"
         android:singleLine="true"
         android:textColor="@color/white_greyish"
         android:textColorHint="@color/white"
@@ -106,15 +106,6 @@
         android:layout_alignLeft="@+id/mail_id"
         android:layout_alignStart="@+id/mail_id" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="5dp"
-        android:paddingTop="8dp" >
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/signup"
         android:layout_width="wrap_content"
@@ -132,7 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/show_pwd"
+        android:text="@string/show_password"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:layout_centerVertical="true"
@@ -146,7 +137,7 @@
         android:layout_weight="1"
         android:gravity="end"
         android:padding="5dp"
-        android:text="@string/forgot"
+        android:text="@string/forgot_password"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:layout_alignBaseline="@+id/show_hide_password"
