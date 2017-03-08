@@ -1,44 +1,83 @@
 <resources>
-    <string name="app_name">Health Doc</string>
-    <string name="mail">Email</string>
+
+    <string name="closebutton"></string>
+    <!--Login page-->
+    <string name="app_name">Health</string>
+    <string name="hello_world">LOGIN</string>
+    <string name="mail">Email_id</string>
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
+    <string name="show_pwd">Show Password</string>
+    <string name="forgot">Forgot password?</string>
+    <string name="newUser">Not a Member yet? Sign Up here.</string>
     <string name="show_password">Show Password</string>
     <string name="forgot_password">Forgot password?</string>
-    <string name="newUser">Not a Member yet? Sign Up here.</string>
-    <string name="title_activity_home__acitivity">Home_Acitivity</string>
-    <string name="hide_password">Hide Password</string>
+
+
+    <string name="navvinay">Vinay</string>
+    <string name="mailvinay">kembhavi.vinay@gmail.com</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Forgot passeord-->
+    <string name="registered_emailid">Please enter your Registered Email Id below:</string>
+    <string name="submit">SUBMIT</string>
+    <string name="back">BACK</string>
+
+    <!--Signup -->
+    <string name="hello">HELLO</string>
+    <string name="signUp">SIGNUP</string>
+    <string name="firstname">firstname</string>
+    <string name="lastname">lastname</string>
+    <string name="mobilenumber">mobile no</string>
+    <string name="signupemail">mail id</string>
+    <string name="already_user">Already have Account? Login here.</string>
+    <string name="birth">date of birth</string>
+    <string name="next">NEXT</string>
+    <string name="confirmPassword">confirm password</string>
+    <string name="err_msg_fname">Enter your first name</string>
+    <string name="err_msg_lname">Enter your last name</string>
+    <string name="err_msg_mobile">Enter your mobile number</string>
+    <string name="err_msg_mail">Enter your mail id</string>
+    <string name="err_msg_birth">Enter your birthday</string>
+    <string name="err_msg_pwd">Enter password</string>
+    <string name="err_msg_cpwd">Enter confirmpassword</string>
+
+
+    <!--signup test case-->
+    <string name="err_msg_fname1">Invalid firstname</string>
+    <string name="err_msg_lname1">Invalid lastname</string>
+    <string name="err_msg_num">Invalid number</string>
+    <string name="err_msg_mail1">Invalid Mailid</string>
+    <string name="err_msg_pwd1">Atleast 6 charcters and 2 numeric</string>
+    <string name="err_msg_cpwd1">Both password Doesnt match</string>
+
+    //BMI page
+    <string name="bmi_text">Calculate your BMI</string>
+    <string name="enterWeight">Enter your weight in kgs</string>
+    <string name="enterHeight">Enter your height in feet</string>
+
+
+
+    <string name="UserName">User Name</string>
+    <string name="useremail">user@domain</string>
+
 
     //Home page options.
     <string name="timeline">Timeline</string>
     <string name="profile">Profile</string>
     <string name="health_status">Health Status</string>
     <string name="calculate_bmi">Calculate BMI</string>
-    <string name="blogs">blogs</string>
+    <string name="blogs">Blogs</string>
     <string name="submenu">-----</string>
     <string name="settings">Settings</string>
     <string name="logout">Logout</string>
 
-
-    <string name="registered_emailid">Please enter your Registered Email Id below:</string>
-    <string name="closebutton">Close Button for Activity</string>
+    <string name="title_activity_home__acitivity">Home_Acitivity</string>
 
 
-    <string name="hello">HELLO</string>
-    <string name="UserName">User Name</string>
-    <string name="useremail">user@domain</string>
-    <string name="submit">SUBMIT</string>
-    <string name="back">BACK</string>
-
-
+    <!--Navigation-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
-
-    //BMI page
-    <string name="bmi_text">Calculate your BMI</string>
-    <string name="enterWeight">Enter your weight in kgs</string>
-    <string name="enterHeight">Enter your height in feet</string>
 
 </resources>
