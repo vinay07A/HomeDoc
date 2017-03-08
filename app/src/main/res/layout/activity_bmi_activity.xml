@@ -65,9 +65,8 @@
         android:padding="@dimen/activity_horizontal_margin"
         android:text="@string/calculate_bmi" />
 
-    <ProgressBar
-        android:id="@+id/BMIProgressBar_id"
-        style="?android:attr/progressBarStyleHorizontal"
+    <TextView
+        android:id="@+id/BMI_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/height_id"
@@ -76,17 +75,21 @@
         android:layout_alignStart="@+id/height_id"
         android:layout_below="@+id/BMICalculate_id"
         android:layout_marginTop="47dp"
-        android:padding="@dimen/activity_horizontal_margin" />
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/BMIResult_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/BMIProgressBar_id"
-        android:layout_alignLeft="@+id/BMIProgressBar_id"
-        android:layout_alignStart="@+id/BMIProgressBar_id"
-        android:layout_alignRight="@+id/BMIProgressBar_id"
-        android:layout_alignEnd="@+id/BMIProgressBar_id"
+        android:layout_below="@+id/BMI_id"
+        android:layout_alignLeft="@+id/BMI_id"
+        android:layout_alignStart="@+id/BMI_id"
+        android:layout_alignRight="@+id/BMI_id"
+        android:layout_alignEnd="@+id/BMI_id"
         android:padding="@dimen/activity_horizontal_margin"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"

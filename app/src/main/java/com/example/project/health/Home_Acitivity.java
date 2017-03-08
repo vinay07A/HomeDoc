@@ -81,24 +81,23 @@ public class Home_Acitivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.timeline_id) {
-            // Handle the camera action
+        switch(id) {
 
-        } else if (id == R.id.profile_id) {
+            case R.id.timeline_id : break;
 
-        } else if (id == R.id.health_status_id) {
+            case R.id.profile_id : break;
 
-        } else if (id == R.id.calculate_bmi_id) {
+            case R.id.health_status_id : break;
 
-            Intent intent = new Intent(this,bmi_activity.class);
-            startActivity(intent);
+            case R.id.calculate_bmi_id : Intent intent = new Intent(this, bmi_activity.class);
+                                        startActivity(intent);
+                                        break ;
 
-        } else if (id == R.id.blogs_id) {
+            case R.id.blogs_id : break;
 
-        } else if (id == R.id.settings_id) {
+            case R.id.settings_id : break;
 
-        } else if (id == R.id.logout_id) {
-
+            case R.id.logout_id : break;
         }
 
 
