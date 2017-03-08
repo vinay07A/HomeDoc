@@ -106,11 +106,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             case R.id.signup:
                 Intent j = new Intent(MainActivity.this, Signup_activity.class);
                 startActivity(j);
+                finish();
                 break;
 
             case R.id.forgot_password:
                 Intent k = new Intent(MainActivity.this, Forgotpassword.class);
                 startActivity(k);
+                finish();
                 break;
 
 
@@ -148,6 +150,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     Toast.LENGTH_SHORT).show();
             Intent i = new Intent(MainActivity.this, Home_Acitivity.class);
             startActivity(i);
+
             }
         }
 

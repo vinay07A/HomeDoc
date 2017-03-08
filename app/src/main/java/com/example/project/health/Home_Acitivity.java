@@ -77,9 +77,9 @@ public class Home_Acitivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem Navitem) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        int id = Navitem.getItemId();
 
         switch(id) {
 

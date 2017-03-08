@@ -104,6 +104,7 @@ public class Signup_activity extends AppCompatActivity implements OnClickListene
             case R.id.already_user:
                 Intent l = new Intent(Signup_activity.this, MainActivity.class);
                 startActivity(l);
+                finish();
                 break;
         }
     }
