@@ -104,9 +104,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 break;
 
             case R.id.signup:
-                Intent j = new Intent(MainActivity.this, Signup_activity.class);
-                startActivity(j);
-                finish();
+
+                    Intent j = new Intent(MainActivity.this, Signup_activity.class);
+                    startActivity(j);
+                    finish();
                 break;
 
             case R.id.forgot_password:

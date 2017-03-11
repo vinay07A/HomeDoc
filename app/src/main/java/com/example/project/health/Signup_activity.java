@@ -2,19 +2,35 @@ package com.example.project.health;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.List;
+
+
+import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
+import android.app.FragmentTransaction;
+
+import android.support.v4.app.Fragment;
+
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.view.View;
 import android.view.WindowManager;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,7 +40,7 @@ import android.app.ActionBar;
 
 import org.w3c.dom.Text;
 
-public class Signup_activity extends AppCompatActivity implements OnClickListener {
+public class Signup_activity extends AppCompatActivity implements OnClickListener{
 
    /* private static Toolbar toolbar;
     private static EditText firstname,lastname,mobileno,email,birth,password,confirmpassword;
@@ -51,9 +67,10 @@ public class Signup_activity extends AppCompatActivity implements OnClickListene
 
 
     private static Toolbar toolbar;
-    private static EditText firstname,lastname,mobileno,email,birth,password,confirmpassword;
+    private static EditText firstname,lastname,mobileno,email,birth_date,password,confirmpassword;
     private static Button next;
     private static TextView login;
+    //private static Spinner occupation;
     private static TextInputLayout inputlayout_fname,inputlayout_lname,inputlayout_mobile,inputlayout_email;
     private static TextInputLayout inputlayout_birth,inputlayout_pwd,inputlayout_cpwd;
 
@@ -61,6 +78,7 @@ public class Signup_activity extends AppCompatActivity implements OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_activity);
+
 
         initviews();
         setListener();
@@ -73,40 +91,89 @@ public class Signup_activity extends AppCompatActivity implements OnClickListene
         inputlayout_lname = (TextInputLayout) findViewById(R.id.input_layout_lname);
         inputlayout_mobile = (TextInputLayout) findViewById(R.id.input_layout_phone);
         inputlayout_email = (TextInputLayout) findViewById(R.id.input_layout_email);
-        //inputlayout_birth = (TextInputLayout) findViewById(R.id.input_layout_birth);
+        inputlayout_birth = (TextInputLayout) findViewById(R.id.input_layout_birth);
         inputlayout_pwd = (TextInputLayout) findViewById(R.id.input_layout_password);
         inputlayout_cpwd = (TextInputLayout) findViewById(R.id.input_layout_cpassword);
-        next = (Button) findViewById(R.id.btn_next);
+
 
         firstname = (EditText) findViewById(R.id.first_name);
         lastname = (EditText) findViewById(R.id.last_name);
         mobileno = (EditText) findViewById(R.id.phn_no);
         email = (EditText) findViewById(R.id.input_email);
-        // birth = (EditText) findViewById(R.id.birth);
+        birth_date = (EditText) findViewById(R.id.birth);
+       // occupation = (Spinner) findViewById(R.id.spinner_occupation);
         password = (EditText) findViewById(R.id.input_password);
         confirmpassword = (EditText) findViewById(R.id.input_cpassword);
         login = (TextView) findViewById(R.id.already_user);
+        next = (Button) findViewById(R.id.btn_next);
+
+        //TextWatcher for all
+        firstname.addTextChangedListener(new MyTextWatcher(firstname));
+        lastname.addTextChangedListener(new MyTextWatcher(lastname));
+        mobileno.addTextChangedListener(new MyTextWatcher(mobileno));
+        email.addTextChangedListener(new MyTextWatcher(email));
+        birth_date.addTextChangedListener(new MyTextWatcher(birth_date));
+        password.addTextChangedListener(new MyTextWatcher(password));
+        confirmpassword.addTextChangedListener(new MyTextWatcher(confirmpassword));
     }
 
     //setListener
     private void setListener(){
         next.setOnClickListener(this);
         login.setOnClickListener(this);
+       // occupation.setOnItemSelectedListener(this);
 
     }
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
 
             case R.id.btn_next:
                 submitform();
                 break;
+
+
             case R.id.already_user:
                 Intent l = new Intent(Signup_activity.this, MainActivity.class);
                 startActivity(l);
                 finish();
                 break;
         }
+    }
+
+
+    /*@Override
+    public void onItemSelected(AdapterView<?> parent,View view,int position,long id){
+
+        // On selecting a spinner item
+        String item = parent.getItemAtPosition(position).toString();
+
+                // Showing selected spinner item
+        //Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+
+    }
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
+    }*/
+
+
+
+
+    public void nextsignup(){
+
+        //sending data to signup 2
+        Intent nextscreen = new Intent(Signup_activity.this, Signup_Activity2.class);
+        nextscreen.putExtra("fname",firstname.getText().toString());
+        nextscreen.putExtra("lname",lastname.getText().toString());
+        nextscreen.putExtra("num",mobileno.getText().toString());
+        nextscreen.putExtra("mailid",email.getText().toString());
+        nextscreen.putExtra("dob",birth_date.getText().toString());
+
+
+        Log.e("n", firstname.getText()+"."+ lastname.getText()+"."+mobileno.getText()+"."+email.getText()+"."+birth_date.getText());
+        startActivity(nextscreen);
+
     }
 
     //validate form
@@ -124,9 +191,9 @@ public class Signup_activity extends AppCompatActivity implements OnClickListene
         if(!validatemail()){
             return;
         }
-        /*if(!validatebirth()){
+        if(!validatebirth()){
             return;
-        }*/
+        }
         if(!validatepwd()){
             return;
         }
@@ -134,6 +201,7 @@ public class Signup_activity extends AppCompatActivity implements OnClickListene
             return;
         }
         Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
+        nextsignup();
 
     }
 
@@ -238,18 +306,33 @@ public class Signup_activity extends AppCompatActivity implements OnClickListene
 
         return true;
     }
-    /* private boolean validatebirth() {
-         if (birth.getText().toString().trim().isEmpty()) {
+     private boolean validatebirth() {
+         String getbirth = birth_date.getText().toString();
+
+
+         // Check patter for birth
+         Pattern p = Pattern.compile(Utils.date);
+
+         Matcher m = p.matcher(getbirth);
+
+         // Check for both field is empty or not
+         if (getbirth.equals("") || getbirth.length() == 0){
              inputlayout_birth.setError(getString(R.string.err_msg_birth));
-             requestFocus(birth);
+             requestFocus(birth_date);
              return false;
-         } else {
+         }else if(!m.find()){
+             inputlayout_birth.setError(getString(R.string.err_msg_birth1));
+             requestFocus(birth_date);
+             return false;
+
+         }
+         else  {
+
              inputlayout_birth.setErrorEnabled(false);
          }
-
          return true;
-     }*/
-    //String getpwd = password.getText().toString();
+     }
+
     private boolean validatepwd() {
         try {
             String getpwd = password.getText().toString();
@@ -309,6 +392,42 @@ public class Signup_activity extends AppCompatActivity implements OnClickListene
 
 
         return true;
+    }
+    private class MyTextWatcher implements TextWatcher {
+        private View view;
+        private MyTextWatcher(View view){
+            this.view = view;
+        }
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+
+        public  void onTextChanged(CharSequence charSequence, int i,int i1,int i2){
+
+        }
+        public void afterTextChanged(Editable editable) {
+            switch (view.getId()) {
+
+                case R.id.first_name:
+                        validatefname();
+                        break;
+                case R.id.last_name:
+                        validatelname();
+                        break;
+                case R.id.phn_no:
+                        validatemobile();
+                        break;
+                case R.id.input_email:
+                        validatemail();
+                        break;
+                case R.id.birth:
+                        validatebirth();
+                        break;
+                case R.id.input_password:
+                        validatepwd();
+                        break;
+
+            }
+        }
     }
     private void requestFocus(View view) {
         if (view.requestFocus()) {

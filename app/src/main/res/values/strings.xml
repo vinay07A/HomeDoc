@@ -48,14 +48,25 @@
     <string name="err_msg_lname1">Invalid lastname</string>
     <string name="err_msg_num">Invalid number</string>
     <string name="err_msg_mail1">Invalid Mailid</string>
-    <string name="err_msg_pwd1">Atleast 6 charcters and 2 numeric</string>
+    <string name="err_msg_pwd1">Atleast 8 charcheters or numbers</string>
     <string name="err_msg_cpwd1">Both password Doesnt match</string>
+    <string name="err_msg_birth1">mm/dd/yyyy</string>
+    <string name="occupation">Occupation</string>
+    <string name="spinner_title">Select Occupation</string>
+    <string-array name="occupation_names">
+        <item>Students</item>
+        <item>Officers</item>
+        <item>police</item>
+        <item>Students</item>
+        <item>Officers</item>
+        <item>police</item>
+    </string-array>
+
 
     //BMI page
     <string name="bmi_text">Calculate your BMI</string>
     <string name="enterWeight">Enter your weight in kgs</string>
     <string name="enterHeight">Enter your height in feet</string>
-
 
 
     <string name="UserName">User Name</string>
@@ -78,6 +89,9 @@
     <!--Navigation-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

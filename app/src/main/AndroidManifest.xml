@@ -30,7 +30,8 @@
             android:label="@string/title_activity_home__acitivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Forgotpassword" />
-        <activity android:name=".bmi_activity"></activity>
+        <activity android:name=".bmi_activity" />
+        <activity android:name=".Signup_Activity2"></activity>
     </application>
 
 </manifest>
