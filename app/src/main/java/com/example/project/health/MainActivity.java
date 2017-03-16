@@ -22,7 +22,10 @@ import android.text.method.PasswordTransformationMethod;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.content.DialogInterface;
+import android.app.AlertDialog;
 
+import android.os.Handler;
 import org.w3c.dom.Text;
 
 
@@ -35,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private static CheckBox show_hide_password;
     private static TextView forgot_password=null;
     private static View view;
+    private boolean doubleBackToExitPressedOnce;
+    private static int flag=0;
 
     public  MainActivity(){
 
@@ -48,17 +53,53 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         initViews();
         setListeners();
 
+
     }
 
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        /*text.setOnClickListener(new View.OnClickListener() {
+            startActivity(intent);
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Press again to exit",
+                Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(new Runnable() {
+
             @Override
-            public void onClick(View v) {
-                Intent j = new Intent(MainActivity.this, Signup_activity.class);
-                startActivity(j);
-            }
-        });*/
+            public void run() {
 
+                doubleBackToExitPressedOnce = false;
+
+            }
+        }, 2000);
+    }
+   /* @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(Intent.CATEGORY_HOME);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+
+    }*/
 
 
     //InitViews

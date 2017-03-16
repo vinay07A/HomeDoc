@@ -12,6 +12,11 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.project.health.Home_Acitivity"
     tools:showIn="@layout/app_bar_home__acitivity">
-
+    <!-- Note : This is the container Frame Layout for all the fragmetns-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainFrame">
+    </FrameLayout>
 
     </RelativeLayout>

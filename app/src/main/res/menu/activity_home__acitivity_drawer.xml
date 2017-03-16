@@ -26,6 +26,11 @@
             android:title="@string/blogs"  />
 
         <item
+            android:id="@+id/pedo_id"
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/runner"  />
+
+        <item
                 android:id="@+id/settings_id"
                 android:icon="@drawable/ic_menu_send"
                 android:title="@string/settings" />

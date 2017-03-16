@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -12,6 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.ActionBar;
+import android.view.MenuItem;
+import android.support.v7.widget.Toolbar;
+
+
 
 
 public class Forgotpassword extends AppCompatActivity implements OnClickListener {
@@ -33,7 +40,37 @@ public class Forgotpassword extends AppCompatActivity implements OnClickListener
         initviews();
         setListener();
 
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+
+                // app icon in action bar clicked; goto parent activity.
+               // this.finish();
+                Intent intent = new Intent(this,MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    @Override
+    public void onBackPressed() {
+        // your code.
+        Intent intent = new Intent(this,MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+       // this.finish();
+    }
+
 
     //InitViews
     private  void initviews() {
@@ -108,6 +145,7 @@ public class Forgotpassword extends AppCompatActivity implements OnClickListener
         finish();
 
     }
+
 
 
 }
