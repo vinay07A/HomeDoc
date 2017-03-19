@@ -36,4 +36,6 @@ public class Splash_activity extends Activity {
             }
         }, SPLASH_TIME_OUT);
     }
+
+
 }

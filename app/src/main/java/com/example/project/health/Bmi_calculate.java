@@ -1,29 +1,18 @@
 package com.example.project.health;
 
-import android.content.Context;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.content.Intent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+public class Bmi_calculate extends AppCompatActivity {
 
-
-public class Bmi_calculate extends Fragment {
-
-
-    private OnFragmentInteractionListener mListener;
 
     public Bmi_calculate() {
         // Required empty public constructor
@@ -32,22 +21,13 @@ public class Bmi_calculate extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_bmi_calculate, container, false);
-
-        if (mListener != null) {
-            mListener.onFragmentInteraction("Fragment 1");
-        }
-
-        return view;
-
-
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_bmi_calculate);
     }
 
 
-   /* @Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -61,19 +41,22 @@ public class Bmi_calculate extends Fragment {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }*/
+    }
 
-    public void calculateBMI(View view){
+    public void calculate_bmi(View view){
+
+
+
 
         double height=0,weight=0, BMIresult=0;
         String result = "";
-        EditText weightInput = (EditText) getView().findViewById(R.id.weight_id);
-        EditText heightInput = (EditText) getView().findViewById(R.id.height_id);
+        EditText weightInput = (EditText) findViewById(R.id.weight_id);
+        EditText heightInput = (EditText)   findViewById(R.id.height_id);
 
-        Button calculateBMI = (Button) getView().findViewById(R.id.BMICalculate_id);
+        Button BMIbutton = (Button) findViewById(R.id.BMICalculate_id);
 
-        TextView resultView = (TextView) getView().findViewById(R.id.BMIResult_id);
-        TextView bmiValue = (TextView) getView().findViewById(R.id.BMI_id);
+        TextView resultView = (TextView) findViewById(R.id.BMIResult_id);
+        TextView bmiValue = (TextView) findViewById(R.id.BMI_id);
 
         weight = Double.parseDouble(weightInput.getText().toString());
         height = Double.parseDouble(heightInput.getText().toString());
@@ -105,11 +88,5 @@ public class Bmi_calculate extends Fragment {
 
 
 
-    }
-
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(String title);
     }
 }

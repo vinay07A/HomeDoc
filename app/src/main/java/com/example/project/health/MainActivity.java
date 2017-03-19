@@ -2,6 +2,10 @@ package com.example.project.health;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -39,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private static TextView forgot_password=null;
     private static View view;
     private boolean doubleBackToExitPressedOnce;
-    private static int flag=0;
 
     public  MainActivity(){
 
@@ -62,9 +65,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_HOME);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
             startActivity(intent);
-            return;
+            finish();
+                  return;
         }
         this.doubleBackToExitPressedOnce = true;
         Toast.makeText(this, "Press again to exit",
@@ -147,12 +150,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             case R.id.signup:
 
                     Intent j = new Intent(MainActivity.this, Signup_activity.class);
+                j.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(j);
                     finish();
                 break;
 
             case R.id.forgot_password:
                 Intent k = new Intent(MainActivity.this, Forgotpassword.class);
+                k.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(k);
                 finish();
                 break;
@@ -191,6 +196,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             Toast.makeText(getApplicationContext(), "Welcome",
                     Toast.LENGTH_SHORT).show();
             Intent i = new Intent(MainActivity.this, Home_Acitivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
 
             }
@@ -204,4 +210,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         finish();
 
     }
+
+
 }

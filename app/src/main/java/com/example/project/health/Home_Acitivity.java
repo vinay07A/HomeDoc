@@ -16,13 +16,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import android.support.v4.app.FragmentTransaction;
-import  android.support.v4.app.Fragment;
+
+
+
+
 
 
 public class Home_Acitivity extends AppCompatActivity
-        implements Bmi_calculate.OnFragmentInteractionListener,
-                    NavigationView.OnNavigationItemSelectedListener{
+        implements  NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,7 +112,7 @@ public class Home_Acitivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem Navitem) {
         // Handle navigation view item clicks here.
         int id = Navitem.getItemId();
-        Fragment fragment = null;
+      //  Fragment fragment = null;
 
         switch(id) {
 
@@ -121,13 +122,19 @@ public class Home_Acitivity extends AppCompatActivity
 
             case R.id.health_status_id : break;
 
-            case R.id.calculate_bmi_id :
-                                        fragment = new Bmi_calculate();
+            case R.id.calculate_bmi_id :Intent intent = new Intent(this,Bmi_calculate.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(intent);
+                                     Toast.makeText(getApplicationContext(), "BMI Started",
+                                      Toast.LENGTH_SHORT).show();
+                                           //fragment = new Bmi_calculate();
                                         break ;
 
             case R.id.blogs_id : break;
 
-            case R.id.pedo_id:  Toast.makeText(getApplicationContext(), "Pedometer Started",
+            case R.id.pedo_id:
+
+                                Toast.makeText(getApplicationContext(), "Pedometer Started",
                                  Toast.LENGTH_SHORT).show();
                                
                                 break;
@@ -140,21 +147,21 @@ public class Home_Acitivity extends AppCompatActivity
                 break;
         }
 
-        if(fragment!=null){
+        /*if(fragment!=null){
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.mainFrame, fragment);
             ft.commit();
 
-        }
+        }*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
 
-    @Override
+    /*@Override
     public void onFragmentInteraction(String title) {
         // NOTE:  Code to replace the toolbar title based current visible fragment
         getSupportActionBar().setTitle(title);
-    }
+    }*/
 }
