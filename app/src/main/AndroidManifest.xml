@@ -34,7 +34,6 @@
             android:parentActivityName=".MainActivity" />
         <activity android:name=".Signup_Activity2" />
         <activity android:name="com.example.project.pedometer.Pedometer_run" />
-        <activity android:name=".Bmi_calculate"></activity>
     </application>
 
 </manifest>

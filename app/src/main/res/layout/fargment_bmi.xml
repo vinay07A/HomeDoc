@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_vertical"
     tools:context="com.example.project.health.Bmi_calculate">
-
 
     <RelativeLayout
         android:id="@+id/activity_main"
@@ -67,7 +67,6 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:background="@color/colorPrimaryDark"
-            android:onClick="calculate_bmi"
             android:padding="@dimen/activity_horizontal_margin"
             android:text="@string/calculate_bmi" />
 
@@ -103,4 +102,5 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </RelativeLayout>
+
 </LinearLayout>
